@@ -1,0 +1,46 @@
+{
+  "name": "sappquotes",
+  "version": "1.0.0",
+  "description": "a simple quotes package",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node dist/test.js",
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "prepare": "npm run build"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "node dist/test.js",
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SapphireDevs/sappQuotes.git"
+  },
+  "keywords": [
+    "quotes",
+    "sapphire",
+    "sappQuotes",
+    "sapphire-quotes"
+  ],
+  "author": "duckodas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SapphireDevs/sappQuotes/issues"
+  },
+  "homepage": "https://github.com/SapphireDevs/sappQuotes#readme",
+  "devDependencies": {
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.1"
+  }
+}
