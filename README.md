@@ -7,7 +7,7 @@ sappQuotes is an npm package that provides a collection of quotes with various c
 You can install sappQuotes using npm:
 
 ```shh
-npm install sappQuotes@latest
+npm install sappquotes@latest
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install sappQuotes@latest
 Here's an example how to use sappQuotes:
 
 ```typescript
-import { fetchQuotes, fetchCategories, getRandomQuote } from "sappQuotes";
+import { fetchQuotes, fetchCategories, getRandomQuote } from "sappquotes";
 
 const randomQuote = await getRandomQuote();
 console.log('Random Quote:', randomQuote);
