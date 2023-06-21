@@ -1,40 +1,72 @@
 import fetch from "node-fetch";
 
+// Enum to represent different categories of quotes
+enum categories {
+  inspiration = "inspiration",
+  motivation = "motivation",
+  love = "love",
+  success = "success",
+  perseverance = "perseverance",
+  wisdom = "wisdom",
+}
+
+// Interface to describe the structure of a quote
 interface Quote {
   text: string;
   author: string;
-  category: string;
+  category: categories;
   tags: string[];
 }
 
 const baseUrl = "https://raw.githubusercontent.com/sapphiredevs/quotes/main";
+const quotesFileUrl = `${baseUrl}/quotes.ts`;
 
+// Fetch quotes from the quotes.ts file
 export async function fetchQuotes(): Promise<Quote[]> {
-  const response = await fetch(`${baseUrl}/quotes.json`);
-  const quotes = await response.json();
-  return quotes as Quote[];
+  const response = await fetch(quotesFileUrl);
+  const fileContent = await response.text();
+
+  const regex = /const quote: Quote\[\] = (\[[\s\S]*?\]);/;
+  const match = fileContent.match(regex);
+
+  if (!match || !match[1]) {
+    throw new Error("Failed to parse quotes file");
+  }
+
+  const quotes = eval(match[1]) as Quote[];
+
+  return quotes;
 }
 
+// Fetch available categories of quotes
 export async function fetchCategories(): Promise<string[]> {
-  const response = await fetch(`${baseUrl}/categories.json`);
-  const categories = await response.json();
-  return categories as string[];
+  return Object.values(categories);
 }
 
+// Get a random quote, optionally filtered by category
 export async function getRandomQuote(category?: string): Promise<Quote> {
   const quotes = await fetchQuotes();
   let filteredQuotes: Quote[] = quotes;
 
   if (category) {
     const categories = await fetchCategories();
-    if (!categories.includes(category)) {
+    const lowercaseCategory = category.toLowerCase();
+
+    if (!categories.map((c) => c.toLowerCase()).includes(lowercaseCategory)) {
       throw new Error(`Invalid category: ${category}`);
     }
-    filteredQuotes = quotes.filter((quote) => quote.category === category);
+    filteredQuotes = quotes.filter(
+      (quote) => quote.category.toLowerCase() === lowercaseCategory
+    );
   }
 
   if (filteredQuotes.length === 0) {
-    throw new Error("No quotes found for the specified category");
+    return {
+      text: `No quotes found for the specified category: ${category}`,
+      author: "",
+      category: categories.wisdom,
+      tags: [],
+    };
   }
 
   const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
