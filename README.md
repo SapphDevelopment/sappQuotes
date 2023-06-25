@@ -1,5 +1,11 @@
 # sappQuotes
 
+<div align="left">
+    <a href="https://discord.gg/sapphiredevs-1044098950455627867"> <img src="https://img.shields.io/discord/1044098950455627867?color=5865F2&logo=discord&logoColor=white" alt="npm version"/> </a>
+    <a href="https://www.npmjs.com/package/sappquotes"> <img src="https://img.shields.io/npm/v/sappquotes.svg?maxAge=3600" alt="npm version"/> </a>
+    <a href="https://www.npmjs.com/package/sappquotes"> <img src="https://img.shields.io/npm/dt/sappquotes.svg?maxAge=3600" alt="npm downloads"/> </a>
+</div>
+
 sappQuotes is an npm package that provides a collection of quotes with various categories. It allows you to retrieve random quotes or quotes from specific categories.
 
 ## Installation
