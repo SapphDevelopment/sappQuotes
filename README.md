@@ -21,19 +21,22 @@ npm install sappquotes@latest
 Here's an example how to use sappQuotes:
 
 ```typescript
-import { fetchQuotes, fetchCategories, getRandomQuote } from "sappquotes";
+import { fetchQuotes, countQuotes, fetchCategories, getRandomQuote } from "sappquotes";
 
 const randomQuote = await getRandomQuote();
-console.log('Random Quote:', randomQuote);
+console.log('Random Quote:', randomQuote); // Returns a random quote
 
 const randomQuoteFromCategory = await getRandomQuote("inspiration");
-console.log('Random Quote from "inspiration" category:', randomQuoteFromCategory);
+console.log('Random Quote from "inspiration" category:', randomQuoteFromCategory); // Returns a random quote from inspiration category
+
+const fetchNumberOfQuotes = await countQuotes();
+console.log(fetchNumberOfQuotes); // Returns a number
 
 const fetchAllQuotes = await fetchQuotes();
-console.log(fetchAllQuotes);
+console.log(fetchAllQuotes); // Returns all the quotes
 
 const fetchAllCategories = await fetchCategories();
-console.log(fetchAllCategories);
+console.log(fetchAllCategories); // Returns all the categories
 ```
 
 ## API
@@ -49,6 +52,10 @@ Retrieve a random quote from any category.
 Retrieve a random quote from a specific category.
 
 - `category`: The category from which to retrieve the quote.
+
+### `countQuotes`
+
+Retrieve the number of quotes registered.
 
 ### `fetchQuotes`
 

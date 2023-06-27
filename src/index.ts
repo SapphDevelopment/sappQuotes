@@ -39,6 +39,12 @@ export async function fetchQuotes(): Promise<Quote[]> {
   return quotes;
 }
 
+// Fetch and count all quotes registered
+export async function countQuotes(): Promise<number> {
+  const quotes = await fetchQuotes();
+  return quotes.length;
+}
+
 // Fetch available categories of quotes
 export async function fetchCategories(): Promise<string[]> {
   return Object.values(categories);

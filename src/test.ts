@@ -1,10 +1,19 @@
-import { fetchQuotes, fetchCategories, getRandomQuote } from "./index.js";
+import {
+  fetchQuotes,
+  countQuotes,
+  fetchCategories,
+  getRandomQuote,
+} from "./index.js";
 
 async function main() {
   try {
     const quotes = await fetchQuotes();
     console.log("ALL THE QUOTES");
     console.log(quotes);
+
+    const countedQuotes = await countQuotes();
+    console.log("NUMBER OF QUOTES");
+    console.log(countedQuotes);
 
     const categories = await fetchCategories();
     console.log("ALL THE CATEGORIES");
