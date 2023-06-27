@@ -9,6 +9,7 @@ enum categories {
   success = "success",
   perseverance = "perseverance",
   wisdom = "wisdom",
+  sad = "sad",
 }
 
 // Interface to describe the structure of a quote
