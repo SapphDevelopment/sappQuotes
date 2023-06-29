@@ -7,9 +7,9 @@ import {
 
 async function main() {
   try {
-    const quotes = await fetchQuotes();
-    console.log("ALL THE QUOTES");
-    console.log(quotes);
+    // const quotes = await fetchQuotes();
+    // console.log("ALL THE QUOTES");
+    // console.log(quotes);
 
     const countedQuotes = await countQuotes();
     console.log("NUMBER OF QUOTES");
@@ -20,12 +20,12 @@ async function main() {
     console.log(categories);
 
     const randomQuote = await getRandomQuote();
-    console.log("Quote Author " + randomQuote.author);
-    console.log("Quote Category " + randomQuote.category);
-    console.log("Quote Tags " + randomQuote.tags);
-    console.log("Quote Text " + randomQuote.text);
+    console.log("Quote Author: " + randomQuote.author);
+    console.log("Quote Category: " + randomQuote.category);
+    console.log("Quote Tags: " + randomQuote.tags);
+    console.log("Quote Text: " + randomQuote.text);
 
-    const randomQuoteFromCategory = await getRandomQuote("inspiratioN");
+    const randomQuoteFromCategory = await getRandomQuote("motivation");
     console.log("Random Quote");
     console.log(randomQuoteFromCategory);
   } catch (error) {

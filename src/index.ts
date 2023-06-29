@@ -71,8 +71,8 @@ export async function getRandomQuote(category?: string): Promise<Quote> {
   if (filteredQuotes.length === 0) {
     return {
       text: `No quotes found for the specified category: ${category}`,
-      author: "",
-      category: categories.wisdom,
+      author: "Could not be found.",
+      category: category as categories,
       tags: [],
     };
   }
