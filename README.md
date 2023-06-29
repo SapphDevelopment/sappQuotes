@@ -21,7 +21,8 @@ npm install sappquotes@latest
 Here's an example how to use sappQuotes:
 
 ```typescript
-import { fetchQuotes, countQuotes, fetchCategories, getRandomQuote } from "sappquotes";
+// import { fetchQuotes, countQuotes, fetchCategories, getRandomQuote } from "sappquotes"; // Import using ES6
+const { fetchQuotes, countQuotes, fetchCategories, getRandomQuote } = require("sappquotes");
 
 const randomQuote = await getRandomQuote();
 console.log('Random Quote:', randomQuote); // Returns a random quote
