@@ -6,7 +6,7 @@
     <a href="https://www.npmjs.com/package/sappquotes"> <img src="https://img.shields.io/npm/dt/sappquotes.svg?maxAge=3600" alt="npm downloads"/> </a>
 </div>
 
-sappQuotes is an npm package that provides a collection of quotes with various categories. It allows you to retrieve random quotes or quotes from specific categories.
+sappQuotes is an very light npm package that provides a collection of quotes with various categories. It allows you to retrieve random quotes or quotes from specific categories. All quotes was placed in by our selfs so no duplicates no api no downtime
 
 ## Installation
 
