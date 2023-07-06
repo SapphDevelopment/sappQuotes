@@ -1,16 +1,5 @@
 import fetch from "node-fetch";
-
-// Enum to represent different categories of quotes
-enum categories {
-  inspiration = "inspiration",
-  motivation = "motivation",
-  love = "love",
-  happy = "happy",
-  success = "success",
-  perseverance = "perseverance",
-  wisdom = "wisdom",
-  sad = "sad",
-}
+import { categories } from "./enums.js";
 
 // Interface to describe the structure of a quote
 interface Quote {

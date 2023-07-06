@@ -1,9 +1,10 @@
 {
   "name": "sappquotes",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "sappQuotes is an npm package that provides a collection of quotes with various categories. It allows you to retrieve random quotes or quotes from specific categories.",
   "type": "module",
   "main": "dist/index.js",
+  "types": "./@types/sappquotes.d.ts",
   "readme": "README.md",
   "contributors": [
     {
