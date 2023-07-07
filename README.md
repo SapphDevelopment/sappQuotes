@@ -27,20 +27,26 @@ Here's an example how to use sappQuotes:
 /* JavaScript */ const { getRandomQuote, countQuotes, fetchQuotes, fetchCategories } = await import("sappquotes")
 /* TypeScrippt */ import { getRandomQuote, countQuotes, fetchQuotes, fetchCategories } = from "sappquotes"
 
-const randomQuote = await getRandomQuote();
-console.log('Random Quote:', randomQuote); // Returns a random quote
+// Fetch and display a random quote
+await getRandomQuote().then((quote) => {
+  console.log(`"${quote.quote}" - ${quote.author}`);
+});
 
-const randomQuoteFromCategory = await getRandomQuote("inspiration");
-console.log('Random Quote from "inspiration" category:', randomQuoteFromCategory); // Returns a random quote from inspiration category
+  // Fetch and display a random quote from a specific category
+const category = "motivation";
+await getRandomQuote(category).then((quote) => {
+  console.log(`"${quote.quote}" - ${quote.author} (${quote.category})`);
+});
 
-const fetchNumberOfQuotes = await countQuotes();
-console.log(fetchNumberOfQuotes); // Returns a number
+  // Fetch and display available categories
+await fetchCategories().then((categories) => {
+  console.log("Available categories:", categories);
+});
 
-const fetchAllQuotes = await fetchQuotes();
-console.log(fetchAllQuotes); // Returns all the quotes
-
-const fetchAllCategories = await fetchCategories();
-console.log(fetchAllCategories); // Returns all the categories
+// Fetch and display available quotes
+await fetchQuotes().then((quotes) => {
+  console.log("Available quotes:", quotes);
+});
 ```
 
 ## API
@@ -56,10 +62,6 @@ Retrieve a random quote from any category.
 Retrieve a random quote from a specific category.
 
 - `category`: The category from which to retrieve the quote.
-
-### `countQuotes`
-
-Retrieve the number of quotes registered.
 
 ### `fetchQuotes`
 

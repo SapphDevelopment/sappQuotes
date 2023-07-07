@@ -1,36 +1,26 @@
-import {
-  fetchQuotes,
-  countQuotes,
-  fetchCategories,
-  getRandomQuote,
-} from "./index.js";
+import { getRandomQuote, fetchCategories, fetchQuotes } from "./index.js";
 
 async function main() {
-  try {
-    // const quotes = await fetchQuotes();
-    // console.log("ALL THE QUOTES");
-    // console.log(quotes);
+  // Fetch and display a random quote
+  await getRandomQuote().then((quote) => {
+    console.log(`"${quote.quote}" - ${quote.author}`);
+  });
 
-    const countedQuotes = await countQuotes();
-    console.log("NUMBER OF QUOTES");
-    console.log(countedQuotes);
+  // Fetch and display a random quote from a specific category
+  const category = "motivation";
+  await getRandomQuote(category).then((quote) => {
+    console.log(`"${quote.quote}" - ${quote.author} (${quote.category})`);
+  });
 
-    const categories = await fetchCategories();
-    console.log("ALL THE CATEGORIES");
-    console.log(categories);
+  // Fetch and display available categories
+  await fetchCategories().then((categories) => {
+    console.log("Available categories:", categories);
+  });
 
-    const randomQuote = await getRandomQuote();
-    console.log("Quote Author: " + randomQuote.author);
-    console.log("Quote Category: " + randomQuote.category);
-    console.log("Quote Tags: " + randomQuote.tags);
-    console.log("Quote Text: " + randomQuote.text);
-
-    const randomQuoteFromCategory = await getRandomQuote("motivation");
-    console.log("Random Quote");
-    console.log(randomQuoteFromCategory);
-  } catch (error) {
-    console.error("Error:", error);
-  }
+  // Fetch and display available quotes
+  await fetchQuotes().then((quotes) => {
+    console.log("Available quotes:", quotes);
+  });
 }
 
 main();
