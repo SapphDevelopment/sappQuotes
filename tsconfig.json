@@ -2,7 +2,8 @@
   "compilerOptions": {
     "strict": true,
     "lib": ["ES2022", "DOM"],
-    "module": "ES2022",
+    "module": "CommonJS",
+    "declaration": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -17,6 +18,6 @@
     "skipDefaultLibCheck": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "dist"],
   "compileOnSave": true
 }

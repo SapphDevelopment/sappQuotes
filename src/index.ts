@@ -11,7 +11,7 @@ export enum Categories {
   sad = "sad",
 }
 
-export interface Quote {
+interface Quote {
   author: string;
   quote: string;
   category: Categories;
@@ -29,7 +29,7 @@ export async function fetchQuotes(): Promise<Quote[]> {
   const fileContent = await response.text();
 
   const regex = /const quotes: Quote\[\] = (\[[\s\S]*?\]);/;
-  const match = fileContent.match(regex);
+  const match = RegExp(regex).exec(fileContent);
 
   if (!match || !match[1]) {
     throw new Error("Failed to parse quotes file");

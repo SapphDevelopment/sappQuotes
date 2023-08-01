@@ -1,8 +1,8 @@
 {
   "name": "sappquotes",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "sappQuotes is an npm package that provides a collection of quotes with various categories. It allows you to retrieve random quotes or quotes from specific categories.",
-  "type": "module",
+  "type": "commonjs",
   "main": "dist/index.js",
   "readme": "README.md",
   "contributors": [
@@ -15,16 +15,13 @@
   "scripts": {
     "test": "node dist/test.js",
     "build": "tsc",
-    "watch": "tsc -w",
-    "prepublish": "npm run build",
-    "prepare": "npm run build"
+    "prepublish": "tsc",
+    "prepare": "tsc",
+    "watch": "tsc -w"
   },
   "directories": {
     "lib": "src",
-    "test": "node dist/test.js",
-    "build": "tsc",
-    "prepublish": "npm run build",
-    "prepare": "npm run build"
+    "test": "dist/test.js"
   },
   "files": [
     "dist",
@@ -36,6 +33,12 @@
   },
   "keywords": [
     "quotes",
+    "quote",
+    "sad-quotes",
+    "happy-quotes",
+    "life-quotes",
+    "discord",
+    "discord-quotes",
     "sapphire",
     "sappQuotes",
     "sapphire-quotes"
@@ -47,9 +50,11 @@
   },
   "homepage": "https://github.com/SapphireDevs/sappQuotes#readme",
   "devDependencies": {
+    "@types/node": "^20.4.5",
     "typescript": "^5.1.3"
   },
   "dependencies": {
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^2.6.12",
+    "tslib": "^2.6.1"
   }
 }
