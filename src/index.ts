@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import axios from "axios";
 
 export enum Categories {
   inspiration = "inspiration",
@@ -25,11 +25,10 @@ export async function fetchCategories(): Promise<string[]> {
 }
 
 export async function fetchQuotes(): Promise<Quote[]> {
-  const response = await fetch(url);
-  const fileContent = await response.text();
+  const response = await axios.get(url);
 
   const regex = /const quotes: Quote\[\] = (\[[\s\S]*?\]);/;
-  const match = RegExp(regex).exec(fileContent);
+  const match = RegExp(regex).exec(response.data);
 
   if (!match || !match[1]) {
     throw new Error("Failed to parse quotes file");
