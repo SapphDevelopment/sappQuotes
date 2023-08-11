@@ -1,6 +1,6 @@
 {
   "name": "sappquotes",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "sappQuotes is an npm package that provides a collection of quotes with various categories. It allows you to retrieve random quotes or quotes from specific categories.",
   "type": "commonjs",
   "main": "dist/index.js",
@@ -40,6 +40,8 @@
     "discord",
     "discord-quotes",
     "sapphire",
+    "gvo",
+    "goodvibesonly",
     "sappQuotes",
     "sapphire-quotes"
   ],

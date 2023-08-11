@@ -25,7 +25,7 @@ Here's an example how to use sappQuotes:
 
 ```typescript
 /* JavaScript */ const { getRandomQuote, countQuotes, fetchQuotes, fetchCategories } = require("sappquotes")
-/* TypeScrippt */ import { getRandomQuote, countQuotes, fetchQuotes, fetchCategories } = from "sappquotes"
+/* TypeScrippt */ import { getRandomQuote, countQuotes, fetchQuotes, fetchCategories } from "sappquotes"
 
 // Fetch and display a random quote
 await getRandomQuote().then((quote) => {
